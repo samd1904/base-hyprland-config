@@ -1,7 +1,7 @@
 {
-        "layer": "top",
-        "position": "top",
-"margin-top": 2,
+    "layer": "top",
+    "position": "top",
+    "margin-top": 2,
     "margin-left": 5,
     "margin-right": 5,
     "margin-bottom": 0,
@@ -12,16 +12,18 @@
 
 
         "hyprland/workspaces": {
-            "format": "{icon}",
-            "format-icons": {
-                "active": "●",
-                "default": "○",
-                "empty": "○"
-            },
-            "persistent-workspaces": {
-                "*": [ 1]
-            }
-        },
+            "disable-scroll": true,
+    "all-outputs": true,
+    "active-only": false,
+    "on-click": "activate",
+    "format": "{icon}",
+   "format-icons": {
+    "1": "", 
+    "2":"", 
+    "3": "", 
+    "4": "",
+    "default": ""
+}       },
         "custom/notification": {
             "tooltip": false,
             "format": "",
@@ -96,6 +98,11 @@
             "format": "",
             "tooltip": false
         },
+        "custom/collapse": {
+            "format": ">",
+            "tooltip": false
+        },
+
         "custom/endpoint":{
             "format": "|",
             "tooltip": false
@@ -107,7 +114,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand","cpu","memory","custom/endpoint"],
+            "modules": ["custom/expand", "custom/collapse","cpu","memory","custom/endpoint"],
         },
         "custom/colorpicker": {
             "format": "p",
