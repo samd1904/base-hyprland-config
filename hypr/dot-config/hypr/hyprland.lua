@@ -211,6 +211,7 @@ hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({ last = true }))
 
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
@@ -290,15 +291,15 @@ hl.config({
 		resize_on_border = true,
 		-- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
 		allow_tearing = false,
-		layout = "dwindle",
+		layout = "master",
 	},
 	-- https://wiki.hyprland.org/Configuring/Variables/#decoration
 	decoration = {
-		rounding = 5,
+		rounding = 8,
 		rounding_power = 2,
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1.0,
-		inactive_opacity = 1.0,
+		inactive_opacity = 0.9,
 		shadow = {
 			enabled = true,
 			range = 4,
@@ -335,6 +336,7 @@ hl.config({
 	-- See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
 	master = {
 		new_status = "master",
+		allow_small_split = true,
 	},
 	-- https://wiki.hyprland.org/Configuring/Variables/#misc
 	misc = {
