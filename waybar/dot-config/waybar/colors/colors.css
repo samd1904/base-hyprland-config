@@ -1,9 +1,9 @@
 /* Tokyo night dark enhanced color theme */
 
-@define-color module-bg     rgba(8, 8, 11, 0.9);
+@define-color module-bg     rgba(8, 8, 11, 0.5);
 @define-color tooltip-bg    @module-bg;
 @define-color inactive      #787c99;
-@define-color fg            #acb0d0;
+@define-color fg            #acb0e9;
 @define-color workspace-fg  @fg;
 @define-color highlight     @inactive;
 
