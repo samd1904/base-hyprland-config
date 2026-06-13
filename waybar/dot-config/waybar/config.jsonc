@@ -22,7 +22,7 @@
 
   "group/left-hidden-top": {
     "orientation": "horizontal",
-    "modules": ["power-profiles-daemon", "group/left-hidden"],
+    "modules": ["group/left-hidden"],
   },
 
   "group/right": {
