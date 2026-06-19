@@ -6,9 +6,9 @@ return {
       javascript = { "prettier" },
     },
     -- This ensures LazyVim doesn't try to use the LSP if prettier fails
-    format_on_save = {
-      lsp_fallback = false,
-      timeout_ms = 500,
-    },
+    -- format_on_save = {
+    --   lsp_fallback = false,
+    --   timeout_ms = 500,
+    -- },
   },
 }

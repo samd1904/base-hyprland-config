@@ -61,7 +61,7 @@
   },
 
   "temperature": {
-    "interval": 2,
+    "interval": 30,
     "format": "{icon} {temperatureC}°",
     "critical-threshold": 90,
     "hwmon-path": "/sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/hwmon/hwmon3/temp1_input",
@@ -143,7 +143,7 @@
   },
 
   "battery": {
-    "interval": 20,
+    "interval": 60,
     "full-at": 100,
     "tooltip": true,
     "format-full": "{icon} {capacity}%",

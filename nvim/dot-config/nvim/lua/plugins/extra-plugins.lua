@@ -48,4 +48,14 @@ return {
       }
     end,
   },
+  {
+    "code-biscuits/nvim-biscuits",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      -- Config goes here
+      cursor_line_only = true,
+    },
+  },
 }
