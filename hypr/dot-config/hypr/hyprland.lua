@@ -66,6 +66,9 @@ local powerMenu = "wlogout --protocol layer-shell"
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 --####################
 --## LOOK AND FEEL ###
@@ -359,6 +362,9 @@ hl.config({
 			natural_scroll = true,
 		},
 	},
+
+	-- Add this as a standalone function call anywhere in your config (e.g., near your keybinds)
+	hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" }),
 	-- https://wiki.hyprland.org/Configuring/Variables/#gestures
 	-- gestures {
 	--     workspace_swipe = false
@@ -399,5 +405,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar & hyprpaper")
 	hl.exec_cmd("hyprpanel")
 	hl.exec_cmd("cliphist wipe; wl-paste --watch cliphist store")
-	hl.exec_cmd("systemctl --user start opentabletdriver.service --now")
+	-- Export the active monitor details to the system bus
+	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")
+	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+
+	-- Launch the portal cleanly
+	hl.exec_cmd("systemctl --user start xdg-desktop-portal")
 end)
