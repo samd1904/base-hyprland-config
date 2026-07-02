@@ -1,9 +1,9 @@
 {
   "layer": "top",
   "position": "top",
-  "width": 1910,
   "height": 25,
-  "margin": "5 0",
+  "output": ["eDP-1", "HDMI-A-1"],
+  "margin": "5 5 0 5",
 
   "group/left": {
     "orientation": "horizontal",

@@ -1,9 +1,10 @@
 {
   "hyprland/workspaces": {
     "format": "{icon}",
-    "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'}\")",
-    "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e-1'}\")",
-    "persistent-workspaces": { "*": 5 },
+    "on-scroll-down": "hyprctl eval 'hl.dsp.focus{workspace = \"e+1\"}'",
+    "on-scroll-up": "hyprctl eval 'hl.dsp.focus{workspace = \"e-1\"}'",
+    "persistent-workspaces": { "*": 3 },
+    "all-outputs": true,
     "cursor": true,
     "format-icons": {
       "active": "󰮯",
@@ -82,7 +83,7 @@
     "format-muted": "<span size='12pt'>󰝟</span>",
     "scroll-step": 2,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "hyprctl dispatch exec \"pavucontrol -t 4\"",
+    "on-click-right": "hyprctl eval 'hl.exec_cmd(\"pavucontrol -t 4\")'",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -123,8 +124,8 @@
     "menu-actions": {
       "action-1": "nmcli radio wifi off",
       "action-2": "nmcli radio wifi on",
-      "action-3": "hyprctl dispatch exec \"kitty -e nmtui\"",
-      "action-4": "hyprctl dispatch exec \"nm-connection-editor\"",
+      "action-3": "hyprctl eval 'hl.exec_cmd(\"kitty -e nmtui\")'",
+      "action-4": "hyprctl eval 'hl.exec_cmd(\"nm-connection-editor\")'",
     },
   },
 
@@ -139,7 +140,7 @@
     "tooltip-format-enumerate-connected": "{device_alias}",
     "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
     "on-click": "~/.local/bin/toggle_bluetooth &",
-    "on-click-right": "hyprctl dispatch exec \"blueman-manager\"",
+    "on-click-right": "hyprctl eval 'hl.exec_cmd(\"blueman-manager\")'",
   },
 
   "battery": {
@@ -161,7 +162,7 @@
     "timezone": "Asia/Kolkata",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%H:%M %d %B %Y}",
-    "on-click-right": "hyprctl dispatch exec \"kitty --class=peaclock -e peaclock\"",
+    "on-click-right": "hyprctl eval 'hl.exec_cmd(\"kitty --class=peaclock -e peaclock\")'",
     "calendar": {
       "mode": "year",
       "weeks-pos": "right",
@@ -208,14 +209,14 @@
     "menu": "on-click-right",
     "menu-file": "~/.config/waybar/context/ctlcenter.xml",
     "menu-actions": {
-      "action-1-1": "hyprctl dispatch exec \"kitty -e btop\"",
-      "action-1-2": "hyprctl dispatch exec \"kitty -e nvtop\"",
-      // "action-1-3": "hyprctl dispatch exec \"kitty -e pkexec powertop\"",
-      "action-1-4": "hyprctl dispatch exec \"missioncenter\"",
+      "action-1-1": "hyprctl eval 'hl.exec_cmd(\"kitty -e btop\")'",
+      "action-1-2": "hyprctl eval 'hl.exec_cmd(\"kitty -e nvtop\")'",
+      // "action-1-3": "hyprctl eval 'hl.exec_cmd(\"kitty -e pkexec powertop\")'",
+      "action-1-4": "hyprctl eval 'hl.exec_cmd(\"missioncenter\")'",
 
-      "action-2-1": "hyprctl dispatch exec \"nwg-look\"",
-      "action-2-2": "hyprctl dispatch exec \"qt6ct\"",
-      "action-2-3": "hyprctl dispatch exec \"kvantummanager\"",
+      "action-2-1": "hyprctl eval 'hl.exec_cmd(\"nwg-look\")'",
+      "action-2-2": "hyprctl eval 'hl.exec_cmd(\"qt6ct\")'",
+      "action-2-3": "hyprctl eval 'hl.exec_cmd(\"kvantummanager\")'",
       "action-3-1": "~/.local/bin/refreshrate 60",
       "action-3-2": "~/.local/bin/refreshrate 90",
       "action-3-3": "~/.local/bin/refreshrate 144",

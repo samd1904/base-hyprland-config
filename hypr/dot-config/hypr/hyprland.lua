@@ -242,6 +242,7 @@ hl.bind(mainMod .. " + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
 hl.bind(mainMod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
 hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
+-- hl.bind(mainMod .. " + V", hl.dsp.togglefloating())
 
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
@@ -402,7 +403,7 @@ hl.config({
 })
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar & hyprpaper")
+	hl.exec_cmd("hyprpaper")
 	hl.exec_cmd("hyprpanel")
 	hl.exec_cmd("cliphist wipe; wl-paste --watch cliphist store")
 	-- Export the active monitor details to the system bus
