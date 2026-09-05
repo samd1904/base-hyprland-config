@@ -400,6 +400,17 @@ hl.config({
 	-- layerrule = blur,waybar
 	-- layerrule = ignorealpha waybar
 	-- layerrule = ignorezero waybar
+
+	-- Define your workspace rules using the new hl.workspace_rule syntax
+	hl.workspace_rule({
+		workspace = "3",
+		monitor = "HDMI-A-1",
+	}),
+
+	hl.workspace_rule({
+		workspace = "2",
+		monitor = "HDMI-A-1",
+	}),
 })
 
 hl.on("hyprland.start", function()
