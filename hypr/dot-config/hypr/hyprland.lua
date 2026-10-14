@@ -197,12 +197,13 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd(powerMenu))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("hyprpicker"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + p", hl.dsp.exec_cmd("cliphist list | wofi --dmenu | cliphist decode | wl-copy"))
-hl.bind(mainMod .. " + b", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only"))
 
@@ -286,7 +287,7 @@ hl.config({
 		gaps_in = 2,
 		gaps_out = 5,
 		border_size = 1,
-		-- https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+		-- https://wiki.yprland.org/Configuring/Variables/#variable-types for info about colors
 		col = {
 			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
 			inactive_border = "rgba(595959aa)",
@@ -400,7 +401,13 @@ hl.config({
 	-- layerrule = blur,waybar
 	-- layerrule = ignorealpha waybar
 	-- layerrule = ignorezero waybar
-
+	hl.window_rule({
+		name = "kitty-no-fullscreen",
+		match = {
+			class = "kitty",
+		},
+		suppress_event = "fullscreen maximize",
+	}),
 	-- Define your workspace rules using the new hl.workspace_rule syntax
 	hl.workspace_rule({
 		workspace = "3",
@@ -415,7 +422,8 @@ hl.config({
 
 hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpaper")
-	hl.exec_cmd("hyprpanel")
+	-- hl.exec_cmd("hyprpanel")
+	hl.exec_cmd("quickshell")
 	hl.exec_cmd("cliphist wipe; wl-paste --watch cliphist store")
 	-- Export the active monitor details to the system bus
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")

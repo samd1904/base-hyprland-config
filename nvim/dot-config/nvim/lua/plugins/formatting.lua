@@ -5,6 +5,11 @@ return {
       typescript = { "prettier" },
       javascript = { "prettier" },
     },
+    formatters = {
+      prettier = {
+        prepend_args = { "--trailing-comma", "none" },
+      },
+    },
     -- This ensures LazyVim doesn't try to use the LSP if prettier fails
     -- format_on_save = {
     --   lsp_fallback = false,

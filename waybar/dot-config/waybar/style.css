@@ -79,9 +79,9 @@
   margin: 0 8px;
 }
 
-#clock {
+#center {
   background: @module-bg;
-  padding: 1px 18px;
+  padding: 1px 10px;
   border-radius: 15px;
 }
 
