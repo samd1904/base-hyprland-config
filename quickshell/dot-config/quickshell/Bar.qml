@@ -47,6 +47,9 @@ Scope {
                     spacing: 6
 
                     Workspaces {}
+                    TrayWidget {
+                        parentWindow: window
+                    }
                     MediaWidget {}
                 }
 
@@ -57,7 +60,7 @@ Scope {
                     anchors.centerIn: parent
                 }
 
-                // Right Items: SysMonitor, Network (with Wi-Fi selector), Notifications
+                // Right Items: Tray, SysMonitor, Battery, Network (with Wi-Fi selector), Notifications
                 RowLayout {
                     id: rightSection
                     anchors.right: parent.right
@@ -65,6 +68,7 @@ Scope {
                     anchors.verticalCenter: parent.verticalCenter
                     spacing: 6
 
+                   
                     SysMonitor {}
                     BatteryWidget {}
                     NetworkWidget {

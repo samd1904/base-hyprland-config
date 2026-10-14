@@ -106,7 +106,6 @@ Rectangle {
     MouseArea {
         id: batMouse
         anchors.fill: parent
-        hoverEnabled: true
-        cursorShape: Qt.PointingHandCursor
+        hoverEnabled: false
     }
 }
