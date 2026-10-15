@@ -16,8 +16,8 @@ Rectangle {
     implicitHeight: Theme.barHeight - 6
     implicitWidth: batRow.implicitWidth + 14
     radius: Theme.pillRadius
-    color: batMouse.containsMouse ? Theme.moduleBgHover : Theme.moduleBg
-    border.color: (capacity <= 15 && !isAcOnline) ? Theme.accentDanger : (batMouse.containsMouse ? Theme.accentSecondary : Theme.moduleBorder)
+    color:  Theme.moduleBg
+    border.color: (capacity <= 15 && !isAcOnline) ? Theme.accentDanger :  Theme.moduleBorder
     border.width: 1
 
     Behavior on color { ColorAnimation { duration: 150 } }
@@ -103,9 +103,4 @@ Rectangle {
         }
     }
 
-    MouseArea {
-        id: batMouse
-        anchors.fill: parent
-        hoverEnabled: false
-    }
 }
