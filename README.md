@@ -1,11 +1,14 @@
 # base-hyprland-config
+
 A super simple hyprland setup, can be used as is or as a jumping off point to start your own rice
 
 This repo is a collection of my dotfiles for the following packages
 
 hypr - wm & compositor using wayland
 kitty - terminal
-waybar - status bar
+sddm theming - login screen
+waybar - super minimal status bar
+quickshell - new and improved status bar
 
 The config are synced using gnu stow.
 To make use of these dotfiles you must do the following
