@@ -4,11 +4,11 @@ A super simple hyprland setup, can be used as is or as a jumping off point to st
 
 This repo is a collection of my dotfiles for the following packages
 
-hypr - wm & compositor using wayland
-kitty - terminal
-sddm theming - login screen
-waybar - super minimal status bar
-quickshell - new and improved status bar
+- hypr - wm & compositor using wayland
+- kitty - terminal
+- sddm theming - login screen
+- waybar - super minimal status bar
+- quickshell - new and improved status bar
 
 The config are synced using gnu stow.
 To make use of these dotfiles you must do the following
